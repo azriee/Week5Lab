@@ -41,7 +41,10 @@ HttpSession session;
         if (user != null){
             response.sendRedirect("home");
             return;
+        } else{
+            request.setAttribute("message", "Invalid Login!");
         }
+        
         getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
